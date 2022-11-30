@@ -3,10 +3,11 @@ import logoutButton from '../components/logoutButton';
 import { getVocab } from '../api/vocabData';
 import { showVocab } from '../pages/vocab';
 import navBar from '../components/shared/navBar';
+import domEvents from '../events/domEvents';
 
 const startApp = (user) => {
   domBuilder(user);
-  // domEvents(user);
+  domEvents(user);
   // formEvents(user);
   navBar();
   logoutButton();
