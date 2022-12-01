@@ -57,9 +57,23 @@ const deleteVocab = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const updateVocab = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary/${payload.firebaseKey}.json`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then(resolve)
+    .catch(reject);
+});
+
 export {
   getVocab,
   getSingleVocab,
   createVocab,
   deleteVocab,
+  updateVocab,
 };

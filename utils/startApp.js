@@ -4,11 +4,12 @@ import { getVocab } from '../api/vocabData';
 import { showVocab } from '../pages/vocab';
 import navBar from '../components/shared/navBar';
 import domEvents from '../events/domEvents';
+import formEvents from '../events/formEvents';
 
 const startApp = (user) => {
   domBuilder(user);
   domEvents(user);
-  // formEvents(user);
+  formEvents(user);
   navBar();
   logoutButton();
   // navigationEvents(user);
