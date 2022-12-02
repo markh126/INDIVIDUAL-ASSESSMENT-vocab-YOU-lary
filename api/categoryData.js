@@ -2,8 +2,8 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-const getVocab = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
+const getCategory = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/category.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -20,8 +20,8 @@ const getVocab = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getSingleVocab = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabulary/${firebaseKey}.json`, {
+const getSingleCategory = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/category/${firebaseKey}.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -32,8 +32,8 @@ const getSingleVocab = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const createVocab = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabulary.json`, {
+const createCategory = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/category.json`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -45,8 +45,8 @@ const createVocab = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const deleteVocab = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabulary/${firebaseKey}.json`, {
+const deleteCategory = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/category/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const deleteVocab = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const updateVocab = (payload) => new Promise((resolve, reject) => {
+const updateCategory = (payload) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocabulary/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
@@ -70,26 +70,10 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const vocabByCategory = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      const vocabCat = Object.values(data).filter((item) => item.category);
-      resolve(vocabCat);
-    })
-    .catch(reject);
-});
-
 export {
-  getVocab,
-  getSingleVocab,
-  createVocab,
-  deleteVocab,
-  updateVocab,
-  vocabByCategory
+  getCategory,
+  getSingleCategory,
+  createCategory,
+  deleteCategory,
+  updateCategory,
 };

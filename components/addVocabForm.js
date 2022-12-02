@@ -1,7 +1,8 @@
 import clearDom from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDom';
+import selectCategory from '../events/selectCategory';
 
-const addVocabForm = (obj = {}) => {
+const addVocabForm = (obj = {}, user) => {
   clearDom();
   const domString = `
   <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}" class="mb-4">
@@ -9,9 +10,7 @@ const addVocabForm = (obj = {}) => {
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" aria-describedby="vocabTitle" placeholder="Vocabulary Name" value="${obj.title || ''}" required>
    </div>
-   <div class="form-group">
-    <label for="category">Category</label>
-    <input type="text" class="form-control" id="category" placeholder="Vocabulary Category" value="${obj.category || ''}" required>
+   <div class="form-group" id="select-category">
    </div>
    <div class="form-group">
     <label for="description">Description</label>
@@ -22,6 +21,7 @@ const addVocabForm = (obj = {}) => {
   </form>`;
 
   renderToDOM('#form-container', domString);
+  selectCategory(`${obj.categoryId || ''}`, user);
 };
 
 export default addVocabForm;

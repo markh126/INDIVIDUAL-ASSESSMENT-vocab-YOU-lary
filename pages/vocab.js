@@ -9,8 +9,8 @@ const noVocab = () => {
 const showVocab = (array) => {
   clearDom();
 
-  const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-vocab-btn">Add A Word</button>';
-  renderToDOM('#add-button', btnString);
+  /* const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-vocab-btn">Add A Word</button>';
+  renderToDOM('#add-button', btnString); */
 
   let domString = '';
   array.forEach((item) => {
@@ -24,7 +24,7 @@ const showVocab = (array) => {
           <i id="view-vocab-btn--${item.firebaseKey}" class="btn btn-success fas fa-eye"></i>
           <i id="edit-vocab-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>
           <i id="delete-vocab-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
-          <h6 class="card-subtitle mb-2"><small class="text-muted">Last Updated 3 mins ago</small></h6>
+          <h6 class="card-subtitle mb-2"><small class="text-muted">${item.time_submitted}</small></h6>
       </div>
     </div>`;
   });
