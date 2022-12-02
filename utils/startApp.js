@@ -5,6 +5,7 @@ import { showVocab } from '../pages/vocab';
 import navBar from '../components/shared/navBar';
 import domEvents from '../events/domEvents';
 import formEvents from '../events/formEvents';
+import navEvents from '../events/navEvents';
 
 const startApp = (user) => {
   domBuilder(user);
@@ -12,7 +13,7 @@ const startApp = (user) => {
   formEvents(user);
   navBar();
   logoutButton();
-  // navigationEvents(user);
+  navEvents(user);
   getVocab(user.uid).then((vocab) => showVocab(vocab));
 };
 
