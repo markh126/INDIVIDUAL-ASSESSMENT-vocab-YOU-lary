@@ -2,7 +2,7 @@ import { getCategory } from '../api/categoryData';
 import renderToDOM from '../utils/renderToDom';
 
 const selectCategory = (categoryId, user) => {
-  let domString = `<label for="author">Select a Category</label>
+  let domString = `<label for="category">Select a Category</label>
     <select class="form-control" id="category_id" required>
     <option value="">Select a Category</option>`;
 
