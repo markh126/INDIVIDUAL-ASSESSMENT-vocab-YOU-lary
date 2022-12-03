@@ -1,7 +1,7 @@
 import { showVocab } from '../pages/vocab';
 import { signOut } from '../utils/auth';
 import {
-  getVocab, vocabByCss, vocabByHtml, vocabByJavascript
+  getVocab, vocabAz, vocabByCss, vocabByHtml, vocabByJavascript, vocabNew, vocabOld
 } from '../api/vocabData';
 
 const navEvents = (user) => {
@@ -31,6 +31,18 @@ const navEvents = (user) => {
   document.querySelector('#sort-js-btn').addEventListener('click', () => {
     vocabByJavascript(user.uid).then(showVocab);
     console.warn('going home');
+  });
+
+  document.querySelector('#sort-az-btn').addEventListener('click', () => {
+    vocabAz(user.uid).then(showVocab);
+  });
+
+  document.querySelector('#sort-new-btn').addEventListener('click', () => {
+    vocabNew(user.uid).then(showVocab);
+  });
+
+  document.querySelector('#sort-old-btn').addEventListener('click', () => {
+    vocabOld(user.uid).then(showVocab);
   });
 };
 

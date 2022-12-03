@@ -115,6 +115,51 @@ const vocabByJavascript = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const vocabAz = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const vocabCat = Object.values(data).sort((a, b) => a.title.localeCompare(b.title));
+      resolve(vocabCat);
+    })
+    .catch(reject);
+});
+
+const vocabNew = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const vocabCat = Object.values(data).sort((a, b) => a.time_submitted.localeCompare() - b.time_submitted);
+      resolve(vocabCat);
+    })
+    .catch(reject);
+});
+
+const vocabOld = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const vocabCat = Object.values(data).sort((a, b) => b.time_submitted.localeCompare() - a.time_submitted);
+      resolve(vocabCat);
+    })
+    .catch(reject);
+});
+
 export {
   getVocab,
   getSingleVocab,
@@ -123,5 +168,8 @@ export {
   updateVocab,
   vocabByHtml,
   vocabByCss,
-  vocabByJavascript
+  vocabByJavascript,
+  vocabAz,
+  vocabNew,
+  vocabOld
 };

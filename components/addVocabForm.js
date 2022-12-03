@@ -14,14 +14,14 @@ const addVocabForm = (obj = {}) => {
    </div>
    <div class="form-group">
     <label for="description">Description</label>
-    <textarea class="form-control" placeholder="Vocabulary Description" id="description" style="height: 100px">${obj.description || ''}</textarea>
+    <textarea class="form-control" placeholder="Vocabulary Description" id="description" style="height: 100px">${obj.definition || ''}</textarea>
    </div>
 
    <label for="language">Choose a Language</label>
    <select name="languages" id="language">
-     <option value="html">HTML</option>
-     <option value="css">CSS</option>
-     <option value="javascript">JavaScript</option>
+     <option value="html" ${obj.category === 'html' ? 'selected' : ''}>HTML</option>
+     <option value="css" ${obj.category === 'css' ? 'selected' : ''}>CSS</option>
+     <option value="javascript" ${obj.category === 'javascript' ? 'selected' : ''}>JavaScript</option>
    </select>
 
    <button type="submit" class="btn btn-primary">Submit Vocab
