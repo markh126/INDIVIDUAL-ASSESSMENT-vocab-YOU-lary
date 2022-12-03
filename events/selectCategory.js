@@ -9,10 +9,10 @@ const selectCategory = (categoryId, user) => {
   getCategory(user.uid).then((categoryArray) => {
     categoryArray.forEach((category) => {
       domString += `
-          <option 
+          <option
             value="${category.firebaseKey}" 
             ${categoryId === category.firebaseKey ? 'selected' : ''}>
-              ${category.title}
+              ${category.name}
           </option>`;
     });
 

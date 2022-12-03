@@ -9,14 +9,9 @@ const noVocab = () => {
 const showVocab = (array) => {
   clearDom();
 
-  const btnString = `<button type="button" class="btn btn-primary btn-sm">Small button</button>
-  <button type="button" class="btn btn-primary btn-sm">Small button</button>
-  <button type="button" class="btn btn-primary btn-sm">Small button</button>
-  <button type="button" class="btn btn-primary btn-sm">Small button</button>`;
-  renderToDOM('#filter-button', btnString);
-
   let domString = '';
   array.forEach((item) => {
+    console.warn(item);
     domString += `
     <div class="card">
       <div class="card-body">

@@ -11,7 +11,8 @@ const formEvents = (user) => {
       console.warn('new vocab');
       const payload = {
         title: document.querySelector('#title').value,
-        category_id: document.querySelector('#category_id').value,
+        category: document.querySelector('#language').value,
+        // category_id: document.querySelector('#category_id').value,
         definition: document.querySelector('#description').value,
         time_submitted: new Date().toLocaleString(),
         uid: user.uid,
@@ -27,7 +28,8 @@ const formEvents = (user) => {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
         title: document.querySelector('#title').value,
-        category: document.querySelector('#category').value,
+        category: document.querySelector('#language').value,
+        // category_id: document.querySelector('#category_id').value,
         definition: document.querySelector('#description').value,
         firebaseKey,
       };
@@ -39,7 +41,7 @@ const formEvents = (user) => {
     if (e.target.id.includes('submit-category')) {
       console.warn('new cat');
       const payload = {
-        title: document.querySelector('#title').value,
+        name: document.querySelector('#title').value,
         uid: user.uid,
       };
       createCategory(payload).then(({ name }) => {
@@ -53,7 +55,7 @@ const formEvents = (user) => {
     if (e.target.id.includes('update-category')) {
       const [, firebaseKey] = e.target.id.split('--');
       const payload = {
-        title: document.querySelector('#title').value,
+        name: document.querySelector('#title').value,
         firebaseKey,
       };
       updateCategory(payload).then(() => {

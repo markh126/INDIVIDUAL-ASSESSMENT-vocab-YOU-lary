@@ -70,7 +70,7 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const vocabByCategory = (uid) => new Promise((resolve, reject) => {
+const vocabByHtml = (uid) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
@@ -79,7 +79,37 @@ const vocabByCategory = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const vocabCat = Object.values(data).filter((item) => item.category);
+      const vocabCat = Object.values(data).filter((item) => item.category === 'html');
+      resolve(vocabCat);
+    })
+    .catch(reject);
+});
+
+const vocabByCss = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const vocabCat = Object.values(data).filter((item) => item.category === 'css');
+      resolve(vocabCat);
+    })
+    .catch(reject);
+});
+
+const vocabByJavascript = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabulary.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const vocabCat = Object.values(data).filter((item) => item.category === 'javascript');
       resolve(vocabCat);
     })
     .catch(reject);
@@ -91,5 +121,7 @@ export {
   createVocab,
   deleteVocab,
   updateVocab,
-  vocabByCategory
+  vocabByHtml,
+  vocabByCss,
+  vocabByJavascript
 };
