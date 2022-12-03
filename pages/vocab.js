@@ -9,8 +9,11 @@ const noVocab = () => {
 const showVocab = (array) => {
   clearDom();
 
-  /* const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-vocab-btn">Add A Word</button>';
-  renderToDOM('#add-button', btnString); */
+  const btnString = `<button type="button" class="btn btn-primary btn-sm">Small button</button>
+  <button type="button" class="btn btn-primary btn-sm">Small button</button>
+  <button type="button" class="btn btn-primary btn-sm">Small button</button>
+  <button type="button" class="btn btn-primary btn-sm">Small button</button>`;
+  renderToDOM('#filter-button', btnString);
 
   let domString = '';
   array.forEach((item) => {

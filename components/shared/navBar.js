@@ -31,7 +31,6 @@ const navBar = () => {
               id="search-bar"
               placeholder="Search Vocabulary"
               aria-label="Search"
-            />
             </li>
           </ul>
           <span class="navbar-text">
