@@ -19,19 +19,24 @@ const navBar = () => {
           <a class="nav-link" href="#" id="add-vocab-btn">
             Add A Word <span class="sr-only">(current)</span>
           </a>
+          </li>
+          <li class="nav-item active">
+          <a class="nav-link" href="#" id="sort-html-btn">
+            HTML <span class="sr-only">(current)</span>
+          </a>
+          </li>
+          <li class="nav-item active">
+          <a class="nav-link" href="#" id="sort-css-btn">
+            CSS <span class="sr-only">(current)</span>
+          </a>
+          </li>
+          <li class="nav-item active">
+          <a class="nav-link" href="#" id="sort-js-btn">
+            JavaScript <span class="sr-only">(current)</span>
+          </a>
             <li>
             </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="#" id="add-category-btn">
-              Add A Language/Tech <span class="sr-only">(current)</span>
             </a>
-              <li>
-            <input
-              class="form-control mr-sm-2"
-              id="search-bar"
-              placeholder="Search Vocabulary"
-              aria-label="Search"
-            </li>
           </ul>
           <span class="navbar-text">
             <div id="logout-button"></div>

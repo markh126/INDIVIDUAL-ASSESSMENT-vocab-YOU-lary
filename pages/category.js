@@ -12,7 +12,7 @@ const showCategory = (array) => {
     domString += `
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">${item.title}</h4>
+        <h4 class="card-title">${item.name}</h4>
         <i id="edit-category-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>
         <i id="delete-category-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt"></i>
         </div>

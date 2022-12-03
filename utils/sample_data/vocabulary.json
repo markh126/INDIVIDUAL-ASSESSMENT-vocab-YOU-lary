@@ -1,10 +1,9 @@
 {
   "-MiBsfuTafbEQ7eAULxV": {
-    "category_id": "-MiBsBKGWFEU-yluJkL-",
     "category": "",
     "firebaseKey": "-MiBsfuTafbEQ7eAULxV",
-    "title": "Postman",
-    "definition": "Postman is a tool that allows us to make calls to APIs without thinking about code implementation. It allows us to make requests and see the shape of data and endpoint testing.",
+    "title": "Multi-dimensional Arrays",
+    "definition": "A two-dimensional array is an array within an array. If you fill this array with another array you get a three-dimensional array and so on.",
     "time_submitted": "",
     "uid": "oKQFKxufbkXEDhQ4gu9SZ8hLLvD3"
   }

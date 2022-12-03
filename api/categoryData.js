@@ -58,7 +58,7 @@ const deleteCategory = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 const updateCategory = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabulary/${payload.firebaseKey}.json`, {
+  fetch(`${endpoint}/category/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
