@@ -19,9 +19,9 @@ const addVocabForm = (obj = {}) => {
 
    <label for="language">Choose a Language</label>
    <select name="languages" id="language">
-     <option value="html" ${obj.category === 'html' ? 'selected' : ''}>HTML</option>
-     <option value="css" ${obj.category === 'css' ? 'selected' : ''}>CSS</option>
-     <option value="javascript" ${obj.category === 'javascript' ? 'selected' : ''}>JavaScript</option>
+     <option value="HTML" ${obj.category === 'HTML' ? 'selected' : ''}>HTML</option>
+     <option value="CSS" ${obj.category === 'CSS' ? 'selected' : ''}>CSS</option>
+     <option value="JavaScript" ${obj.category === 'JavaScript' ? 'selected' : ''}>JavaScript</option>
    </select>
 
    <button type="submit" class="btn btn-primary">Submit Vocab

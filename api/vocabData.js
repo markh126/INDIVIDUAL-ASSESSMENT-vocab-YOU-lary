@@ -79,7 +79,7 @@ const vocabByHtml = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const vocabCat = Object.values(data).filter((item) => item.category === 'html');
+      const vocabCat = Object.values(data).filter((item) => item.category === 'HTML');
       resolve(vocabCat);
     })
     .catch(reject);
@@ -94,7 +94,7 @@ const vocabByCss = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const vocabCat = Object.values(data).filter((item) => item.category === 'css');
+      const vocabCat = Object.values(data).filter((item) => item.category === 'CSS');
       resolve(vocabCat);
     })
     .catch(reject);
@@ -109,7 +109,7 @@ const vocabByJavascript = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const vocabCat = Object.values(data).filter((item) => item.category === 'javascript');
+      const vocabCat = Object.values(data).filter((item) => item.category === 'JavaScript');
       resolve(vocabCat);
     })
     .catch(reject);
