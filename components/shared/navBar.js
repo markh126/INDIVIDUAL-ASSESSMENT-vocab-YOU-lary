@@ -21,6 +21,11 @@ const navBar = () => {
           </a>
           </li>
           <li class="nav-item active">
+          <a class="nav-link" href="#" id="add-lang-btn">
+            Add A Language <span class="sr-only">(current)</span>
+          </a>
+          </li>
+          <li class="nav-item active">
           <a class="nav-link" href="#" id="sort-html-btn">
             HTML <span class="sr-only">(current)</span>
           </a>
@@ -39,19 +44,18 @@ const navBar = () => {
             <a class="nav-link" href="#" id="sort-az-btn">
               Alphabetically <span class="sr-only">(current)</span>
             </a>
-                      </a>
+              </a>
             <li>
             <li class="nav-item active">
             <a class="nav-link" href="#" id="sort-new-btn">
               Newest <span class="sr-only">(current)</span>
             </a>
-                                  </a>
+             </a>
             <li>
             <li class="nav-item active">
             <a class="nav-link" href="#" id="sort-old-btn">
               Oldest <span class="sr-only">(current)</span>
             </a>
-              <li>
             </li>
             </a>
           </ul>

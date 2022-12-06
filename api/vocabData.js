@@ -154,7 +154,7 @@ const vocabOld = (uid) => new Promise((resolve, reject) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const vocabCat = Object.values(data).sort((a, b) => b.time_submitted.localeCompare() - a.time_submitted);
+      const vocabCat = Object.values(data).sort((a, b) => b.time_submitted.localeCompare(a.time_submitted));
       resolve(vocabCat);
     })
     .catch(reject);
