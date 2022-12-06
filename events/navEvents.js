@@ -37,11 +37,11 @@ const navEvents = (user) => {
     vocabAz(user.uid).then(showVocab);
   });
 
-  document.querySelector('#sort-new-btn').addEventListener('click', () => {
+  document.querySelector('#sort-old-btn').addEventListener('click', () => {
     vocabNew(user.uid).then(showVocab);
   });
 
-  document.querySelector('#sort-old-btn').addEventListener('click', () => {
+  document.querySelector('#sort-new-btn').addEventListener('click', () => {
     vocabOld(user.uid).then(showVocab);
   });
 };
