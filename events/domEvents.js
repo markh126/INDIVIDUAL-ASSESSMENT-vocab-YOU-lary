@@ -33,7 +33,7 @@ const domEvents = (user) => {
   });
 
   document.querySelector('#navigation').addEventListener('click', (e) => {
-    if (e.target.id.includes('add-category-btn')) {
+    if (e.target.id.includes('add-lang-btn')) {
       console.warn('add cat');
       addCategoryForm({}, user);
     }
