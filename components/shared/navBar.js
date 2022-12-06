@@ -48,13 +48,13 @@ const navBar = () => {
             <li>
             <li class="nav-item active">
             <a class="nav-link" href="#" id="sort-new-btn">
-              Newest <span class="sr-only">(current)</span>
+              Oldest <span class="sr-only">(current)</span>
             </a>
              </a>
             <li>
             <li class="nav-item active">
             <a class="nav-link" href="#" id="sort-old-btn">
-              Oldest <span class="sr-only">(current)</span>
+              Newest <span class="sr-only">(current)</span>
             </a>
             </li>
             </a>
